@@ -1,0 +1,13 @@
+version: '2'
+services:
+  database:
+    container_name: gcbapi-database
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=gcbapi
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    volumes:
+      - ./.data/postgresql:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
